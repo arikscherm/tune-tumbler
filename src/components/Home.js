@@ -42,6 +42,11 @@ function ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed) 
 
 
 function addFavorite(favoritesList, setFavoritesList, newSet) {
+
+    if (favoritesList.includes(newSet)) {
+        alert("Set Already Favorited!")
+    }
+
     const updatedFavoritesList = [...favoritesList, newSet];
     setFavoritesList(updatedFavoritesList);
 }
@@ -59,7 +64,11 @@ function Home() {
         </section>
         <div>
         <p>{newSet}</p>
-        {/*{newSet && <button onClick={()=>addFavorite(favoritesList, setFavoritesList, newSet)}>Add Favorite</button>}*/}
+        {newSet && (
+            <button onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)}>
+                Add Favorite
+            </button>
+        )}
         </div>
     </main>
 
