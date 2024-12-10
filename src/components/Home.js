@@ -47,8 +47,10 @@ function addFavorite(favoritesList, setFavoritesList, newSet) {
         alert("Set Already Favorited!")
     }
 
-    const updatedFavoritesList = [...favoritesList, newSet];
-    setFavoritesList(updatedFavoritesList);
+    else {
+        const updatedFavoritesList = [...favoritesList, newSet];
+        setFavoritesList(updatedFavoritesList);  
+    }
 }
 
 
@@ -60,7 +62,7 @@ function Home() {
     <main>
         <section id="homeButtonsContainer">
             <button onClick={() => ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed)}>Reset</button>
-            <button onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
+            <button class="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
         </section>
         <div>
         <p>{newSet}</p>

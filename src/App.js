@@ -11,16 +11,18 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <h1>Random Set Generator</h1>
+      <header>
+        <h1>Random Set Generator</h1>
         <Navbar />
-        <TuneProvider>
+      </header>
+      <TuneProvider>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/current-session" element={<CurrentSession />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/tune-library" element={<TuneLibrary />} />
         </Routes>
-        </TuneProvider>
+      </TuneProvider>
     </Router>
   );
 }
