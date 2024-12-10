@@ -76,3 +76,21 @@ button:hover {
   background-color: #0097a7; /* Darker shade on hover */
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column; /* Align children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text inside elements */
+}
+button.remove {
+  padding: 5px 10px; /* Larger padding for the "Generate Set!" button */
+  margin: 5px;
+  font-size: 1rem; /* Larger font size for the "Generate Set!" button */
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+button.remove:hover {
+  background-color: #d80000; /* Darker shade on hover */
+}

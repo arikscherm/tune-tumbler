@@ -40,6 +40,7 @@ function TuneLibrary() {
         }
     }
     return (
+        <div className="page-container">
     <main>
         <div>
             <h2>Tune Library</h2>
@@ -47,7 +48,7 @@ function TuneLibrary() {
                 {tuneLibrary.map((tune, index) => 
                     <li key={index}>
                         { tune }
-                        <button onClick={() => removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tune)}>Remove</button>
+                        <button class="remove" onClick={() => removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tune)}>Remove</button>
                     </li>)}
             </ol>
         </div>
@@ -56,6 +57,8 @@ function TuneLibrary() {
             <button onClick={() => addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingTunes, remainingTunes)}>Add</button>
         </div>
     </main>
+    </div>
+
     )
 }
 
