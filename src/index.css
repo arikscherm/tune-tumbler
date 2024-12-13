@@ -8,7 +8,8 @@ body {
   background-color: #333;
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -20,6 +21,7 @@ header {
   flex-direction: column;
   align-items: center; /* Center elements in the column horizontally */
   margin-bottom: 20px;
+  grid-row: 1;
 }
 
 h1 {
@@ -42,10 +44,11 @@ nav ul li a {
 nav ul {
   list-style: none;
   display: flex;
+  grid-row: 2;
 }
 
 nav ul li a:hover {
-  color: #00bcd4; /* Change link color on hover */
+  color: #54e473; /* Change link color on hover */
 }
 
 #homeButtonsContainer {
@@ -53,14 +56,15 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   margin: 0 20px;
+  grid-row: 3;
 }
 
 button {
-  margin: 15px 0px; /* Horizontal space between buttons */
+  margin: 15px 5px; /* Horizontal space between buttons */
   padding: 10px 20px; /* Internal space for a larger button appearance */
   background-color: white;
   color: #333;
-  border: none;
+  border: transparent;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -73,7 +77,7 @@ button.generate-set {
 }
 
 button:hover {
-  background-color: #0097a7; /* Darker shade on hover */
+  background-color: #54e473; /* Darker shade on hover */
 }
 
 .page-container {
@@ -84,13 +88,78 @@ button:hover {
   text-align: center; /* Center text inside elements */
 }
 button.remove {
-  padding: 5px 10px; /* Larger padding for the "Generate Set!" button */
+  padding: 5px; 
   margin: 5px;
-  font-size: 1rem; /* Larger font size for the "Generate Set!" button */
-  background-color: white;
+  border-radius: 5px;
+  font-size: 0.8rem; /* Larger font size for the "Generate Set!" button */
+  background-color: white; /* Darker shade on hover */
+  color: #333;
   transition: background-color 0.3s;
 }
 
 button.remove:hover {
-  background-color: #d80000; /* Darker shade on hover */
+  background-color: #d80000;
+  color: white;
+}
+
+#setsPlayedDiv {
+  grid-row: 4;
+}
+
+#resetButton {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin-left: 80%;
+
+}
+
+#tuneList {
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+}
+
+/*****************************************
+ADD FAV HEART
+******************************************/
+
+#addFavorite {
+  position: relative;
+  width: 25px; /* Width of the heart */
+  height: 25px; /* Height of the heart */
+  margin-top: 5px; /* Space above the button */
+  background-color: #333; /* Default background color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add a pointer cursor */
+ /* outline: none; /* Remove focus outline for accessibility */
+  transition: transform 0.6s; /* Smooth animation on hover */
+}
+
+#addFavorite::before,
+#addFavorite::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 13px; /* Size of heart lobes */
+  height: 20px; /* Size of heart lobes */
+  border-radius: 50px 50px 0 0; /* Make top corners rounded */
+  background: red; /* Heart color */
+  transition: background-color 0.3s; /* Smooth color transition */
+}
+
+#addFavorite::before {
+  transform: rotate(-45deg); /* Rotate left lobe */
+  transform-origin: center;
+  left: 11px; /* Position left lobe */
+}
+
+#addFavorite::after {
+  transform: rotate(45deg); /* Rotate right lobe */
+  transform-origin: center;
+  right: 11px; /* Position right lobe */
+}
+
+/* Hover effect for the heart button */
+#addFavorite:hover {
+  transform: scale(1.2); /* Slightly enlarge the heart */
 }

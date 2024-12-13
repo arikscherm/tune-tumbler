@@ -46,9 +46,9 @@ function TuneLibrary() {
             <h2>Tune Library</h2>
             <ol>
                 {tuneLibrary.map((tune, index) => 
-                    <li key={index}>
-                        { tune }
+                    <li id="tuneList" key={index}>
                         <button class="remove" onClick={() => removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tune)}>Remove</button>
+                        { tune }
                     </li>)}
             </ol>
         </div>

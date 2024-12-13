@@ -10,12 +10,12 @@ function GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, sets
 
     else {
         for (let i = 0; i < 3; i++) {
-        
+
             //Select random tune and delete it from remainingTunes
-            let randomIndex = Math.floor(Math.random()*remainingTunes.length);
+            let randomIndex = Math.floor(Math.random() * remainingTunes.length);
             let newTune = remainingTunes[randomIndex];
             remainingTunes.splice(randomIndex, 1);
-            
+
             //Concatenate new tune to the set. Sets are displayed as a string--> tune1/ tune2/ tune3
             if (i < 2) {
                 generatedSet = generatedSet.concat(newTune.concat('/ '));
@@ -23,10 +23,10 @@ function GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, sets
             else {
                 generatedSet = generatedSet.concat(newTune);
             }
-            
+
         }
         setNewSet(generatedSet);
-        setSetsPlayed([...setsPlayed, generatedSet]);
+        setSetsPlayed([generatedSet, ...setsPlayed]);
 
     }
 
@@ -49,7 +49,7 @@ function addFavorite(favoritesList, setFavoritesList, newSet) {
 
     else {
         const updatedFavoritesList = [...favoritesList, newSet];
-        setFavoritesList(updatedFavoritesList);  
+        setFavoritesList(updatedFavoritesList);
     }
 }
 
@@ -59,20 +59,26 @@ function Home() {
     const { tuneLibrary, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed, favoritesList, setFavoritesList } = useContext(TuneContext);
     const [newSet, setNewSet] = useState('');
     return (
-    <main>
-        <section id="homeButtonsContainer">
-            <button onClick={() => ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed)}>Reset</button>
-            <button class="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
-        </section>
-        <div>
-        <p>{newSet}</p>
-        {newSet && (
-            <button onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)}>
-                Add Favorite
-            </button>
-        )}
-        </div>
-    </main>
+        <main>
+            <section id="homeButtonsContainer">
+                <button class="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
+
+
+                <div>
+                    <div id="setsPlayedDiv">
+                        <ol>
+                            {setsPlayed.map((set, index) => (
+                                <li key={index}>
+                                    {set}
+                                    <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} />
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+                </div>
+                <button id="resetButton" onClick={() => ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed)}>Reset</button>
+            </section>
+        </main>
 
     )
 }

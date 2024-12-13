@@ -8,14 +8,6 @@ function CurrentSession() {
     return (
     <main>
         <div id="currentSessionContainer">
-            <div id="setsPlayedDiv">
-                <h2>Sets Played</h2>
-                <ol>
-                    {setsPlayed.map((set, index) => (
-                        <li key={index}>{set}</li>
-                    ))}
-                </ol>
-            </div>
             <div id="remainingTunesDiv">
                 <h2>Remaining Tunes</h2>
                 <ol>
