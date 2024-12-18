@@ -18,9 +18,9 @@ function App() {
       <TuneProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/tune-library" element={<TuneLibrary />} />
           <Route path="/current-session" element={<CurrentSession />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/tune-library" element={<TuneLibrary />} />
         </Routes>
       </TuneProvider>
     </Router>

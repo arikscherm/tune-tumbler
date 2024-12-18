@@ -13,7 +13,6 @@ function Favorites() {
     const { favoritesList, setFavoritesList } = useContext(TuneContext);
     return (
     <section>
-        <h2>Favorites</h2>
         <main>
             <ol>
                 {favoritesList.map((set, index) => (

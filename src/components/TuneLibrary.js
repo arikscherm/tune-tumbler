@@ -43,11 +43,10 @@ function TuneLibrary() {
         <div className="page-container">
     <main>
         <div>
-            <h2>Tune Library</h2>
             <ol>
                 {tuneLibrary.map((tune, index) => 
                     <li id="tuneList" key={index}>
-                        <button class="remove" onClick={() => removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tune)}>x</button>
+                        <button className="remove" onClick={() => removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tune)}>x</button>
                         { tune }
                     </li>)}
             </ol>

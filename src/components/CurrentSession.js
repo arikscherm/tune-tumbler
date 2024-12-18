@@ -9,7 +9,6 @@ function CurrentSession() {
     <main>
         <div id="currentSessionContainer">
             <div id="remainingTunesDiv">
-                <h2>Remaining Tunes</h2>
                 <ol>
                     {remainingTunes.map((tune, index) => (
                         <li key={index}>{tune}</li>

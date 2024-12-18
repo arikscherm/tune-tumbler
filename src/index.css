@@ -51,6 +51,11 @@ nav ul li a:hover {
   color: #54e473; /* Change link color on hover */
 }
 
+
+.nav-link .active {
+  color: #54e473;
+}
+
 #homeButtonsContainer {
   display: flex;
   flex-direction: column;
