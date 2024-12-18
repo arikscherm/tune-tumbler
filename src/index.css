@@ -25,7 +25,7 @@ header {
 }
 
 h1 {
-  margin: 0 0 20px; /* Add spacing below the heading */
+  margin: 50px; /* Add spacing below the heading */
   font-size: 3rem; /* Increased font size for prominence */
 }
 
