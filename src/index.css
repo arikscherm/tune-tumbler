@@ -87,7 +87,7 @@ button:hover {
 
 
 button.remove {
-  padding: 2px 4px;
+  padding: 3px 6px;
   margin: 10px;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -164,16 +164,17 @@ ADD FAV HEART
 #favList {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #tuneLibContainer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 #newTuneInputs {
-  margin-left: 220px;
+  margin-left: 200px;
 }
 
 input {

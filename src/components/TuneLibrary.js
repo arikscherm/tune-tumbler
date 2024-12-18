@@ -53,6 +53,14 @@ function TuneLibrary() {
         <div id="newTuneInputs">
             <input placeholder="Add new tune" value={newTune} onChange={(e) => setNewTune(e.target.value)} onKeyDown={handleKeyDown}/>
             <button onClick={() => addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingTunes, remainingTunes)}>Add</button>
+        <div id="sessionAPI">
+            <h2>Or...</h2>
+            <h4>Get the top XYZ most popular tunes</h4>
+                <h4>from <i><u>TheSession.org</u></i>.</h4>
+            <input placeholder="XYZ"/>
+            <button onClick={() => console.log("to the session!")}>Go!</button>
+        </div>
+        
         </div>
     </main>
 
