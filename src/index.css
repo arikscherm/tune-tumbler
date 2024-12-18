@@ -93,12 +93,11 @@ button:hover {
   text-align: center; /* Center text inside elements */
 }
 button.remove {
-  display: flex;
   padding: 2px 4px;
-  margin: 5px;
-  border-radius: 50%;
-  font-size: 0.8rem; /* Larger font size for the "Generate Set!" button */
-  background-color: white; /* Darker shade on hover */
+  margin-right: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background-color: white; 
   color: #333;
   transition: background-color 0.3s;
   justify-content: center;
@@ -170,4 +169,9 @@ ADD FAV HEART
 /* Hover effect for the heart button */
 #addFavorite:hover {
   transform: scale(1.2); /* Slightly enlarge the heart */
+}
+
+
+#favList {
+  list-style: none;
 }

@@ -14,15 +14,15 @@ function Favorites() {
     return (
     <section>
         <main>
-            <ol>
+            <ul id="favList">
                 {favoritesList.map((set, index) => (
                 <li key={index}>
+                    <button className="remove" onClick={() => removeFavorite(favoritesList, setFavoritesList, set)}>Remove</button>
                     {set}
-                    <button onClick={() => removeFavorite(favoritesList, setFavoritesList, set)}>Remove</button>
                 </li>
                 
                 ))}
-            </ol>
+            </ul>
         </main>
     </section>
     )
