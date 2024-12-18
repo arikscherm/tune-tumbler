@@ -163,4 +163,26 @@ ADD FAV HEART
 
 #favList {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#tuneLibContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+#newTuneInputs {
+  margin-left: 220px;
+}
+
+input {
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#post {
+  padding: 6px;
+  font-size: 16px;
 }

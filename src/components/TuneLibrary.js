@@ -40,7 +40,7 @@ function TuneLibrary() {
         }
     }
     return (
-    <main>
+    <main id="tuneLibContainer">
         <div>
             <ol>
                 {tuneLibrary.map((tune, index) => 
@@ -50,7 +50,7 @@ function TuneLibrary() {
                     </li>)}
             </ol>
         </div>
-        <div>
+        <div id="newTuneInputs">
             <input placeholder="Add new tune" value={newTune} onChange={(e) => setNewTune(e.target.value)} onKeyDown={handleKeyDown}/>
             <button onClick={() => addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingTunes, remainingTunes)}>Add</button>
         </div>
