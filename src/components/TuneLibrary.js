@@ -31,6 +31,24 @@ function addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingT
 
 }
 
+
+
+// fetch('https://thesession.org/tunes/popular/reels?format=json&perpage=50&page=1')
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Unable to connect to the session');
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     const tunes = data.tunes.map(tune => tune.name);
+//     console.log(tunes)
+
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
+
 function TuneLibrary() {
     const { tuneLibrary, remainingTunes, setRemainingTunes, setTuneLibrary } = useContext(TuneContext);
     const [newTune, setNewTune] = useState('');
