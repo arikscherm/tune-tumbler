@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
         <h1>Random Set Generator</h1>
         <Navbar />
