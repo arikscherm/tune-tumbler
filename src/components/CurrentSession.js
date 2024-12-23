@@ -4,7 +4,7 @@ import { TuneContext } from './TuneContext';
 
 
 function CurrentSession() {
-    const { remainingTunes, setsPlayed } = useContext(TuneContext);
+    const { remainingTunes } = useContext(TuneContext);
     return (
     <main>
         <div id="currentSessionContainer">
