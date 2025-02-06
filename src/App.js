@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router and Routes
 import { TuneProvider } from './components/TuneContext';
 import Navbar from './components/Navbar';
@@ -9,11 +10,16 @@ import TuneLibrary from './components/TuneLibrary'
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "TuneDice";
+  }, []);
+
   return (
     <Router>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
-        <h1>Random Set Generator</h1>
+        <h1>TuneDice</h1>
         <Navbar />
       </header>
       <TuneProvider>
