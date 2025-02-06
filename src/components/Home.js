@@ -62,8 +62,6 @@ function Home() {
         <main>
             <section id="homeButtonsContainer">
                 <button class="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
-
-
                 <div>
                     <div id="setsPlayedDiv">
                         <ol>

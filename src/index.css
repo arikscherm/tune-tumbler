@@ -183,8 +183,6 @@ input {
 
 
 
-
-
 @media (max-width: 600px) {
   html, body {
     height: 100%;
@@ -250,5 +248,4 @@ input {
 #newTuneInputs {
   margin-left: 3rem; /* 200px */
   }
-
 }
