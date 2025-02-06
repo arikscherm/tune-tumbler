@@ -5,7 +5,6 @@ import '../index.css'; // Make sure to import the CSS file
 function Navbar() {
   return (
     <nav>
-      <title>TuneDice</title>
       <ul>
         <li className="nav-link">
           <NavLink to="/" exact activeClassName="active">Home</NavLink>
