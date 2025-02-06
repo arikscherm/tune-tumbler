@@ -76,12 +76,6 @@ function Home() {
                 </div>
                 <button id="resetButton" onClick={() => ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed)}>Reset</button>
             </section>
-            <p>Welcome to TuneDice!</p>
-            <p>Click the Generate Set button to create a random set of 3 Irish Reels.</p>
-            <p>Keep on playing random sets until you run out of tunes!</p>
-            <p>Once out of tunes, click the Reset button to refresh.</p>
-            <p>Visit the Tune Library page to view and edit your collection of tunes.</p>
-            <p>Visit the Remaining Tunes page to view tunes that haven't been randomly selected yet.</p>
         </main>
 
     )
