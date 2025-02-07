@@ -12,18 +12,14 @@ import './App.css';
 function App() {
 
   <Helmet>
-    <meta name="description" content="Welcome to TuneDice! Click the Generate Set button to create a random set of 3 Irish Reels. 
-    Keep on playing random sets until you run out of tunes! Once out of tunes, click the Reset button to refresh. 
-    Visit the Tune Library page to view and edit your collection of tunes, 
-    or visit the Remaining Tunes page to view tunes that haven't been randomly selected yet." />
-    <title>TradTumbler</title>
+    <title>Reel-Roulette</title>
   </Helmet> 
 
   return (
     <Router>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
-        <h1>TradTumbler</h1>
+        <h1>Reel-Roulette</h1>
         <Navbar />
       </header>
       <TuneProvider>
