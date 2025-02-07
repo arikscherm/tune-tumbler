@@ -113,8 +113,9 @@ function TuneLibrary() {
             <button onClick={() => addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingTunes, remainingTunes)}>Add</button>
         <div id="sessionAPI">
             <h2>Or...</h2>
-            <h4>Get the top XYZ most popular tunes</h4>
-                <h4>from <a href="https://thesession.org/"><i><u>TheSession.org</u></i>.</a></h4>
+            <h4> Get the top XYZ most popular tunes
+                from <h2><a href="https://thesession.org/" ><i>TheSession.org</i>.</a></h2>
+            </h4>
             <input placeholder="XYZ" type="number" value={numTunes} onChange={(e) => setNumTunes(e.target.value)} onKeyDown={handleKeyDownFetch}/>
             <button onClick={() => fetchFromSession(numTunes, setNumTunes, tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes)}>Go!</button>
         </div>
