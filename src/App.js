@@ -12,7 +12,7 @@ import './App.css';
 function App() {
 
   <Helmet>
-    <title>Reel Roulette</title>
+    <title>Tune Tumbler</title>
   </Helmet> 
 
   return (
@@ -22,6 +22,7 @@ function App() {
         <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
       </header>
+      <hr></hr>
       <TuneProvider>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -109,14 +109,16 @@ function TuneLibrary() {
             </ol>
         </div>
         <div id="newTuneInputs">
+            <h3>Enter a tune below to add it to your tune library.</h3>
             <input placeholder="Add new tune" value={newTune} onChange={(e) => setNewTune(e.target.value)} onKeyDown={handleKeyDown}/>
             <button onClick={() => addTune(newTune, setNewTune, tuneLibrary, setTuneLibrary, setRemainingTunes, remainingTunes)}>Add</button>
         <div id="sessionAPI">
-            <h2>Or...</h2>
-            <h4> Get the top XYZ most popular tunes
-                from <h2><a href="https://thesession.org/" ><i>TheSession.org</i>.</a></h2>
-            </h4>
-            <input placeholder="XYZ" type="number" value={numTunes} onChange={(e) => setNumTunes(e.target.value)} onKeyDown={handleKeyDownFetch}/>
+            <div class="separator"><h3>Or Instead... </h3></div>
+            <h3> Get popular tunes from <a href="https://thesession.org/" ><i><u>TheSession.org</u></i>.</a></h3>
+              <h4>Enter a number below to fetch that number of Irish reels<br></br>
+                from the session.org. Tunes ordered by popularity.</h4>
+            
+            <input placeholder="Try 50?" type="number" value={numTunes} onChange={(e) => setNumTunes(e.target.value)} onKeyDown={handleKeyDownFetch}/>
             <button onClick={() => fetchFromSession(numTunes, setNumTunes, tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes)}>Go!</button>
         </div>
         
