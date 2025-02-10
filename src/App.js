@@ -12,16 +12,17 @@ import './App.css';
 function App() {
 
   <Helmet>
-    <title>Reel Roulette</title>
+    <title>Tune Tumbler</title>
   </Helmet> 
 
   return (
     <Router>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
-        <h1>Welcome to Reel Roulette!</h1>
+        <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
       </header>
+      <hr></hr>
       <TuneProvider>
         <Routes>
           <Route path="/" element={<Home />} />

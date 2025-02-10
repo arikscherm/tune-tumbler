@@ -85,7 +85,7 @@ button {
 }
 
 button.generate-set {
-  padding: 1.25rem 2.5rem; /* 20px 40px */
+  padding: 1.25rem 3.5rem; /* 20px 40px */
   font-size: 1.5rem;
 }
 
@@ -117,6 +117,27 @@ button.remove:hover {
   justify-content: center;
   width: 20%;
   margin-left: 80%;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 2;
+  border-bottom: 1px solid #fff;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
 }
 
 /*****************************************
@@ -175,7 +196,7 @@ ADD FAV HEART
 }
 
 #newTuneInputs {
-  margin-left: 12.5rem; /* 200px */
+  margin-left: 5rem; /* 200px */
 }
 
 input {
@@ -189,10 +210,14 @@ input {
   font-size: 1rem;
 }
 
+#generateInstructions {
+  text-align: center;
+}
 
 
 
 
+/***************************/
 @media (max-width: 600px) {
   html, body {
     height: 100%;
