@@ -19,7 +19,7 @@ function App() {
     <Router>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
-        <h1>Welcome to Reel Roulette!</h1>
+        <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
       </header>
       <TuneProvider>
