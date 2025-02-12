@@ -7,6 +7,7 @@ import Home from './components/Home';
 import CurrentSession from './components/CurrentSession'
 import Favorites from './components/Favorites'
 import TuneLibrary from './components/TuneLibrary'
+import MapBackground from "./components/MapBackground";
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <header>
         <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
+        <MapBackground />
       </header>
       <hr></hr>
       <TuneProvider>
