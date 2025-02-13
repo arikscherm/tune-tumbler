@@ -6,6 +6,7 @@ export default function MapBackground() {
     <MapContainer
       center={[51, -21]} // Adjust to your preferred center
       zoom={6}
+      zoomControl={false}
       className="map-background"
     >
       {/* Stadia Alidade Smooth Dark Layer */}
