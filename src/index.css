@@ -3,6 +3,16 @@ html, body {
   margin: 0;
 }
 
+.map-background {
+  position: fixed;
+  top: 0;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: all;
+  z-index: 0;
+}
+
 body {
   background-color: #333;
   color: white;
@@ -26,10 +36,66 @@ header {
 h1 {
   margin: 3.125rem; /* 50px */
   font-size: 3rem; /* Scaled with the root font size */
+  z-index: 2;
+}
+
+h3, h4{
+  z-index: 2;
+}
+
+#setsPlayedDiv {
+  grid-row: 4;
+  position: relative; /* Ensure this content is above map */
+  z-index: 2; /* Content above map */
+}
+
+#newTuneInputs {
+  position: relative; /* Ensure the container is positioned above the map */
+  z-index: 2; /* Content above map */
+}
+
+#newTuneInputs input {
+  position: relative; /* Ensure each input field is above map */
+  z-index: 2; /* Content above map */
+}
+
+#newTuneInputs button {
+  position: relative; /* Ensure buttons inside inputs are above map */
+  z-index: 2; /* Content above map */
+}
+
+#sessionAPI {
+  position: relative; /* Ensure this section is positioned above map */
+  z-index: 2; /* Content above map */
+}
+
+#sessionAPI input {
+  position: relative; /* Ensure each input field is above map */
+  z-index: 2; /* Content above map */
+}
+
+#sessionAPI button {
+  position: relative; /* Ensure buttons inside sessionAPI are above map */
+  z-index: 2; /* Content above map */
+}
+
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  position: relative; /* Ensure list is positioned properly */
+  z-index: 2; /* List above the map */
+}
+
+li {
+  margin-bottom: 0.625rem;
+  position: relative; /* Ensure list items are stacked properly */
+  z-index: 2; /* List items above the map */
 }
 
 nav ul li {
   margin: 0 0.9375rem; /* 15px */
+  z-index: 2;
 }
 
 nav ul li a {
@@ -65,6 +131,7 @@ nav ul li a:hover {
 a {
   color: white;
   text-decoration: none;
+  z-index: 2;
 }
 
 a:hover {
@@ -82,6 +149,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
   font-weight: bold;
+  z-index: 2;
 }
 
 button.generate-set {
