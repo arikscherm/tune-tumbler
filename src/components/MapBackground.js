@@ -4,31 +4,18 @@ import "leaflet/dist/leaflet.css";
 export default function MapBackground() {
   return (
     <MapContainer
-      center={[52.8, -14.7]} // Adjust to your preferred center
-      zoom={7}
+      center={[51, -23]} // Adjust to your preferred center
+      zoom={5.6}
       className="map-background"
     >
       {/* Stadia Alidade Smooth Dark Layer */}
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      
-      {/* Waymarked Trails Skating Layer */}
-      <TileLayer
-        url="https://tile.waymarkedtrails.org/skating/{z}/{x}/{y}.png"
-        attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-      />
-      
-      {/* OpenAIP Layer */}
-      <TileLayer
-        url="https://{s}.tile.maps.openaip.net/geowebcache/service/tms/1.0.0/openaip_basemap@EPSG%3A900913@png/{z}/{x}/{y}.png"
-        attribution='<a href="https://www.openaip.net/">openAIP Data</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-NC-SA</a>)'
-        minZoom={4}
-        maxZoom={14}
-        tms={true}
-        detectRetina={true}
-        subdomains="12"
+        url="https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/time/{tilematrixset}{maxZoom}/{z}/{y}/{x}.jpg"
+        attribution='&copy; Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (&copy; <a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.'
+        time=''
+        tilematrixset='GoogleMapsCompatible_Level'
+        maxZoom='8'
+        minZoom='1'
       />
     </MapContainer>
   );
