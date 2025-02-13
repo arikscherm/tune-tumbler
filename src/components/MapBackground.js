@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 export default function MapBackground() {
   return (
     <MapContainer
-      center={[51, -23]} // Adjust to your preferred center
+      center={[51, -21]} // Adjust to your preferred center
       zoom={6}
       className="map-background"
     >
