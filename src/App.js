@@ -20,9 +20,9 @@ function App() {
     <Router>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
+        <MapBackground />
         <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
-        <MapBackground />
       </header>
       <hr></hr>
       <TuneProvider>
@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/tune-library" element={<TuneLibrary />} />
           <Route path="/current-session" element={<CurrentSession />} />
-          <Route path="/favorites" element={<Favorites />} />
+          {/* <Route path="/favorites" element={<Favorites />} /> */}
         </Routes>
       </TuneProvider>
     </Router>

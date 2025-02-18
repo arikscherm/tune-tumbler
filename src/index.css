@@ -10,7 +10,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   pointer-events: all;
-  z-index: 0;
+  z-index: -1;
 }
 
 body {
@@ -41,12 +41,17 @@ h1 {
 
 h3, h4{
   z-index: 2;
+  position: relative;
 }
 
 #setsPlayedDiv {
   grid-row: 4;
   position: relative; /* Ensure this content is above map */
   z-index: 2; /* Content above map */
+}
+
+#individualSet {
+  border-bottom: 1px solid #ddd;
 }
 
 #newTuneInputs {
@@ -78,7 +83,6 @@ h3, h4{
   position: relative; /* Ensure buttons inside sessionAPI are above map */
   z-index: 2; /* Content above map */
 }
-
 
 ol {
   list-style-type: decimal;

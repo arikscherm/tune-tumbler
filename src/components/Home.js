@@ -69,9 +69,9 @@ function Home() {
                     <div id="setsPlayedDiv">
                         <ol>
                             {setsPlayed.map((set, index) => (
-                                <li key={index}>
+                                <li id="individualSet" key={index}>
                                     {set}
-                                    <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} />
+                                    {/* <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} /> */}
                                 </li>
                             ))}
                         </ol>
