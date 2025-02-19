@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MapBackground from "./MapBackground";
 import L from "leaflet";
+import "leaflet.markercluster";
 import points from "../data/sessions.json"
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
@@ -28,7 +29,7 @@ function Map() {
     if (mapRef.current && mapReady) {
       // If markersLayer is not set, create one
       if (!markersLayer.current) {
-        markersLayer.current = L.layerGroup().addTo(mapRef.current);
+        markersLayer.current = L.markerClusterGroup().addTo(mapRef.current);
       }
 
       async function loadMarkers() {
@@ -39,10 +40,15 @@ function Map() {
   
         markersLayer.current.clearLayers();
   
-        points.forEach(({ latitude, longitude, name }) => {
-         console.log("here")
+        points.forEach(({ latitude, longitude, name, address, town, area, country }) => {
+            const popupContent = `
+            <strong>${name}</strong><br />
+            ${address ? address + "<br />" : ""}
+            ${town ? town + ", " : ""}${area ? area + "<br />" : ""}
+            ${country ? country : ""}
+          `;
           L.marker([parseFloat(latitude), parseFloat(longitude)])
-            .bindPopup(name)
+            .bindPopup(popupContent)
             .addTo(markersLayer.current);
         });
       }
@@ -53,7 +59,7 @@ function Map() {
 
   return (
     <div>
-      <MapBackground zIndex={0} onMapReady={(map) => { 
+      <MapBackground zIndex={0} staticMap={false} onMapReady={(map) => { 
         mapRef.current = map; 
         setMapReady(true);
       }} />

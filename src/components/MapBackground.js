@@ -13,14 +13,21 @@ function InitializeMap( { onMapReady } ) {
   return null;
 }
 
-export default function MapBackground( { onMapReady, zIndex=0 } ) {
+export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true }) {
   return (
     <MapContainer
       center={[59, -27]} // Adjust to your preferred center
       zoom={5}
-      zoomControl={false}
+      zoomControl={!staticMap} // Hide zoom controls if static
       className="map-background"
       style={{ zIndex }}
+      dragging={!staticMap}
+      zoomDelta={staticMap ? false : undefined}
+      scrollWheelZoom={!staticMap}
+      touchZoom={!staticMap}
+      doubleClickZoom={!staticMap}
+      keyboard={!staticMap}
+      boxZoom={!staticMap}
     >
       {/* Stadia Alidade Smooth Dark Layer */}
       <TileLayer
