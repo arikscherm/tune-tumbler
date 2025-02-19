@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MapBackground from "./MapBackground";
 import L from "leaflet";
+import points from "../data/sessions.json"
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import markerRetina from "leaflet/dist/images/marker-icon-2x.png";
@@ -17,11 +18,6 @@ const defaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = defaultIcon;
 
-function getRandomCoords() {
-  let lat = 60 + (Math.random() - 0.5) * 20;
-  let lon = -20 + (Math.random() - 0.5) * 20;
-  return [lat, lon];
-}
 
 function Map() {
   const mapRef = useRef(null);
@@ -35,15 +31,23 @@ function Map() {
         markersLayer.current = L.layerGroup().addTo(mapRef.current);
       }
 
-      // Clear existing markers before adding new ones
-      markersLayer.current.clearLayers();
-
-      for (let i = 0; i < 100; i++) {
-        let coords = getRandomCoords();
-        L.marker(coords)
-          .bindPopup(`Marker #${i + 1}`)
-          .addTo(markersLayer.current); 
+      async function loadMarkers() {
+  
+        if (!markersLayer.current) {
+          markersLayer.current = L.layerGroup().addTo(mapRef.current);
+        }
+  
+        markersLayer.current.clearLayers();
+  
+        points.forEach(({ latitude, longitude, name }) => {
+         console.log("here")
+          L.marker([parseFloat(latitude), parseFloat(longitude)])
+            .bindPopup(name)
+            .addTo(markersLayer.current);
+        });
       }
+  
+      loadMarkers();
     }
   }, [mapReady]);
 
