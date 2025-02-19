@@ -1,7 +1,19 @@
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { useEffect } from "react";
 
-export default function MapBackground() {
+
+function InitializeMap( { onMapReady } ) {
+  const map = useMap();
+  useEffect(() => {
+    if (onMapReady) {
+      onMapReady(map)
+    }
+  }, [map, onMapReady]);
+  return null;
+}
+
+export default function MapBackground( { onMapReady } ) {
   return (
     <MapContainer
       center={[59, -27]} // Adjust to your preferred center
@@ -18,6 +30,7 @@ export default function MapBackground() {
         maxZoom='8'
         minZoom='1'
       />
+      <InitializeMap onMapReady={onMapReady} />
     </MapContainer>
   );
 }
