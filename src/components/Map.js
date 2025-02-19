@@ -42,15 +42,14 @@ function Map() {
         let coords = getRandomCoords();
         L.marker(coords)
           .bindPopup(`Marker #${i + 1}`)
-          .addTo(markersLayer.current);
-          
+          .addTo(markersLayer.current); 
       }
     }
   }, [mapReady]);
 
   return (
     <div>
-      <MapBackground onMapReady={(map) => { 
+      <MapBackground zIndex={0} onMapReady={(map) => { 
         mapRef.current = map; 
         setMapReady(true);
       }} />

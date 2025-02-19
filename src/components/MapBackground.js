@@ -13,13 +13,14 @@ function InitializeMap( { onMapReady } ) {
   return null;
 }
 
-export default function MapBackground( { onMapReady } ) {
+export default function MapBackground( { onMapReady, zIndex=0 } ) {
   return (
     <MapContainer
       center={[59, -27]} // Adjust to your preferred center
       zoom={5}
       zoomControl={false}
       className="map-background"
+      style={{ zIndex }}
     >
       {/* Stadia Alidade Smooth Dark Layer */}
       <TileLayer
