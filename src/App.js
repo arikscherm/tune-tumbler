@@ -5,7 +5,7 @@ import { TuneProvider } from './components/TuneContext';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import CurrentSession from './components/CurrentSession'
-import Map from './components/Map'
+import SessionMap from './components/SessionMap'
 import TuneLibrary from './components/TuneLibrary'
 import MapBackground from "./components/MapBackground";
 import './App.css';
@@ -32,7 +32,7 @@ function App() {
           <Route path="/tune-library" element={<TuneLibrary />} />
           <Route path="/current-session" element={<CurrentSession />} />
           {/* <Route path="/favorites" element={<Favorites />} /> */}
-          <Route path="/map" element={<Map />} />
+          <Route path="/session-map" element={<SessionMap />} />
         </Routes>
       </TuneProvider>
     </Router>

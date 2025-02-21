@@ -16,7 +16,7 @@ function Navbar() {
           <NavLink to="/current-session" activeClassName="active">Remaining Tunes</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/map" activeClassName="active">All Sessions</NavLink>
+          <NavLink to="/session-map" activeClassName="active">Session Tumbler</NavLink>
         </li>
         {/* <li className="nav-link">
           <NavLink to="/favorites" activeClassName="active">Favorites</NavLink>

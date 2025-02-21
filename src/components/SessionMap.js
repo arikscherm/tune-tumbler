@@ -6,6 +6,9 @@ import points from "../data/sessions.json"
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import markerRetina from "leaflet/dist/images/marker-icon-2x.png";
+import "leaflet.markercluster/dist/MarkerCluster.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+
 
 // Fix missing marker issue
 const defaultIcon = L.icon({
@@ -20,7 +23,7 @@ const defaultIcon = L.icon({
 L.Marker.prototype.options.icon = defaultIcon;
 
 
-function Map() {
+function SessionMap() {
   const mapRef = useRef(null);
   const markersLayer = useRef(null); // Layer group for markers
   const [mapReady, setMapReady] = useState(false);
@@ -29,7 +32,22 @@ function Map() {
     if (mapRef.current && mapReady) {
       // If markersLayer is not set, create one
       if (!markersLayer.current) {
-        markersLayer.current = L.markerClusterGroup().addTo(mapRef.current);
+        const markersCluster = L.markerClusterGroup({
+            iconCreateFunction: function (cluster) {
+              const count = cluster.getChildCount();
+              let size = "small"; // Default size
+          
+              if (count > 50) size = "large";
+              else if (count > 20) size = "medium";
+          
+              return L.divIcon({
+                html: `<div class="cluster-icon ${size}">${count}</div>`,
+                className: "custom-cluster",
+                iconSize: L.point(40, 40),
+              });
+            },
+          });
+        markersLayer.current = markersCluster.addTo(mapRef.current);
       }
 
       async function loadMarkers() {
@@ -67,4 +85,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default SessionMap;
