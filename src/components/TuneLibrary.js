@@ -76,9 +76,8 @@ async function fetchFromSession(numTunes, setNumTunes, tuneLibrary, setTuneLibra
         }
     }
     setNumTunes('');
-    setTuneLibrary(newTuneLibrary);
-    // const updatedRemainingTunes = tuneLibrary;
-    setRemainingTunes(newTuneLibrary);
+    setTuneLibrary([...newTuneLibrary]);
+    setRemainingTunes([...newTuneLibrary]);
     console.log(tuneLibrary);
 }
 
