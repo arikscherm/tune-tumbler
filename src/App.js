@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router and Routes
-import { TuneProvider } from './components/TuneContext';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import CurrentSession from './components/CurrentSession'
-import SessionMap from './components/SessionMap'
-import TuneLibrary from './components/TuneLibrary'
-import MapBackground from "./components/MapBackground";
+import { TuneProvider } from './components/TuneContext/TuneContext';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import CurrentSession from './components/RemainingTunes/CurrentSession'
+import SessionMap from './components/SessionSpinner/SessionMap'
+import TuneLibrary from './components/TuneLibrary/TuneLibrary'
+import MapBackground from "./components/MapBackground/MapBackground";
 import './App.css';
 
 

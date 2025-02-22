@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { TuneContext } from './TuneContext';
+import { TuneContext } from '../TuneContext/TuneContext';
 
 
 function removeTune(tuneLibrary, setTuneLibrary, remainingTunes, setRemainingTunes, tuneToRemove) {

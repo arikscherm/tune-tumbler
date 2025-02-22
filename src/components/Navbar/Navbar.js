@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink instead of Link
-import '../index.css'; // Make sure to import the CSS file
+import '../../index.css'; // Make sure to import the CSS file
 
 function Navbar() {
   return (
@@ -16,7 +16,7 @@ function Navbar() {
           <NavLink to="/current-session" activeClassName="active">Remaining Tunes</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/session-map" activeClassName="active">Session Tumbler</NavLink>
+          <NavLink to="/session-map" activeClassName="active">Session Spinner</NavLink>
         </li>
         {/* <li className="nav-link">
           <NavLink to="/favorites" activeClassName="active">Favorites</NavLink>

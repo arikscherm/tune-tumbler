@@ -422,4 +422,8 @@ input {
   margin-left: 3rem; /* 200px */
   }
 
+  .flyToRandomPin {
+    top: 16%;
+  }
+
 }

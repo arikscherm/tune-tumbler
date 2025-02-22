@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { TuneContext } from './TuneContext';
+import { TuneContext } from '../TuneContext/TuneContext';
 
 function GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed) {
     let generatedSet = '';
@@ -40,19 +40,6 @@ function ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed) 
 }
 
 
-// function addFavorite(favoritesList, setFavoritesList, newSet) {
-
-//     if (favoritesList.includes(newSet)) {
-//         alert("Set Already Favorited!")
-//     }
-
-//     else {
-//         const updatedFavoritesList = [...favoritesList, newSet];
-//         setFavoritesList(updatedFavoritesList);
-//     }
-// }
-
-
 
 function Home() {
     const { tuneLibrary, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed } = useContext(TuneContext);
@@ -70,7 +57,6 @@ function Home() {
                             {setsPlayed.map((set, index) => (
                                 <li id="individualSet" key={index}>
                                     {set}
-                                    {/* <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} /> */}
                                 </li>
                             ))}
                         </ol>
