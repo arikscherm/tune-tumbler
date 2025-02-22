@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { TuneContext } from './TuneContext';
+import { TuneContext } from '../TuneContext/TuneContext';
 
 
 

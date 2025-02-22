@@ -1,0 +1,61 @@
+.nav-link .active {
+    color: #54e473;
+  }
+
+  nav ul li {
+    margin: 0 0.9375rem; /* 15px */
+    z-index: 2;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+    transition: color 0.3s;
+    font-size: 1.5rem; /* Scaled size */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    grid-row: 2;
+  }
+  
+  nav ul li a:hover {
+    color: #54e473; /* Change link color on hover */
+  }
+  
+  .nav-link .active {
+    color: #54e473;
+  }
+
+
+  @media (max-width: 600px) {
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      font-size: 0.8rem;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-flex;
+      text-align: center;
+    }
+
+    #homeButtonsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 90%;
+    }
+
+  }

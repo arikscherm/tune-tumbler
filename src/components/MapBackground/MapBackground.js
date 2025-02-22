@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
+import "./MapBackground.css";
+import "../../index.css"
 
 function InitializeMap({ onMapReady, mapCenter, mapZoom }) {
   const map = useMap();
@@ -16,8 +18,8 @@ function InitializeMap({ onMapReady, mapCenter, mapZoom }) {
 }
 
 export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true }) {
-  const getInitialCenter = () => (window.innerWidth < 600 ? [56, -10] : [59, -27]);
-  const getInitialZoom = () => (window.innerWidth < 600 ? 6 : 5);
+  const getInitialCenter = () => (window.innerWidth < 600 ? [62, -19] : [59, -27]);
+  const getInitialZoom = () => (window.innerWidth < 600 ? 4 : 5);
   const [mapCenter, setMapCenter] = useState(getInitialCenter);
   const [mapZoom, setMapZoom] = useState(getInitialZoom);
 

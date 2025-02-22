@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import MapBackground from "./MapBackground"
-import '../index.css'; // Make sure to import the CSS file
+import MapBackground from "../MapBackground/MapBackground"
+import '../../index.css';
+import './SessionSpinner.css';
 import L from "leaflet";
 import "leaflet.markercluster";
-import points from "../data/sessions.json";
+import points from "../../data/sessions.json";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import markerRetina from "leaflet/dist/images/marker-icon-2x.png";
