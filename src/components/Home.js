@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { TuneContext } from './TuneContext';
 
-
 function GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed) {
     let generatedSet = '';
     if (remainingTunes.length < 3) {
@@ -41,37 +40,37 @@ function ResetSession(tuneLibrary, setRemainingTunes, setNewSet, setSetsPlayed) 
 }
 
 
-function addFavorite(favoritesList, setFavoritesList, newSet) {
+// function addFavorite(favoritesList, setFavoritesList, newSet) {
 
-    if (favoritesList.includes(newSet)) {
-        alert("Set Already Favorited!")
-    }
+//     if (favoritesList.includes(newSet)) {
+//         alert("Set Already Favorited!")
+//     }
 
-    else {
-        const updatedFavoritesList = [...favoritesList, newSet];
-        setFavoritesList(updatedFavoritesList);
-    }
-}
+//     else {
+//         const updatedFavoritesList = [...favoritesList, newSet];
+//         setFavoritesList(updatedFavoritesList);
+//     }
+// }
 
 
 
 function Home() {
-    const { tuneLibrary, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed, favoritesList, setFavoritesList } = useContext(TuneContext);
+    const { tuneLibrary, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed } = useContext(TuneContext);
     const [newSet, setNewSet] = useState('');
     return (
         <main>
             <section id="homeButtonsContainer">
                 <h4 id="generateInstructions">
                     <i>Too many tunes, too little time? Let Tune Tumbler choose for you!</i> <br></br>
-                    <i>Click the button below to generate a random set of 3 Irish reels!</i></h4>
+                    <i>Click the button below to generate a set of 3 Irish reels!</i></h4>
                 <button class="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
                 <div>
                     <div id="setsPlayedDiv">
                         <ol>
                             {setsPlayed.map((set, index) => (
-                                <li key={index}>
+                                <li id="individualSet" key={index}>
                                     {set}
-                                    <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} />
+                                    {/* <button id="addFavorite" onClick={() => addFavorite(favoritesList, setFavoritesList, newSet)} /> */}
                                 </li>
                             ))}
                         </ol>

@@ -10,7 +10,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   pointer-events: all;
-  z-index: 0;
+  z-index: -1;
 }
 
 body {
@@ -41,12 +41,17 @@ h1 {
 
 h3, h4{
   z-index: 2;
+  position: relative;
 }
 
 #setsPlayedDiv {
   grid-row: 4;
   position: relative; /* Ensure this content is above map */
   z-index: 2; /* Content above map */
+}
+
+#individualSet {
+  border-bottom: 1px solid #ddd;
 }
 
 #newTuneInputs {
@@ -78,7 +83,6 @@ h3, h4{
   position: relative; /* Ensure buttons inside sessionAPI are above map */
   z-index: 2; /* Content above map */
 }
-
 
 ol {
   list-style-type: decimal;
@@ -206,6 +210,72 @@ button.remove:hover {
 
 .separator:not(:empty)::after {
   margin-left: .25em;
+}
+
+
+.custom-cluster {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  color: blue;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+}
+
+.small {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  background: #00ff26;
+  border-radius: 50%;
+  display: flex; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  background: #f6ff00;
+  border-radius: 35%;
+  display: flex; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.large {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  background: rgba(255, 149, 0, 0.7);
+  border-radius: 20%;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flyToRandomPin {
+  position: fixed;
+  right: 0%;
+  top: 1%;
+  padding: 6px 9px;
+  background-color: #64f4b3;
+  cursor: pointer;
+  z-index: 1;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 18px;
+}
+
+.flyToRandomPin:hover {
+  background-color: #44d463;
+  transform: scale(1.15);
+  border-color: grey;
 }
 
 /*****************************************
