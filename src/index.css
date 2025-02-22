@@ -261,7 +261,7 @@ button.remove:hover {
 .flyToRandomPin {
   position: fixed;
   right: 0%;
-  top: 0%;
+  top: 1%;
   padding: 6px 9px;
   background-color: #64f4b3;
   cursor: pointer;
@@ -269,6 +269,7 @@ button.remove:hover {
   border: 2px solid transparent;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
+  font-size: 18px;
 }
 
 .flyToRandomPin:hover {

@@ -132,7 +132,7 @@ const flyToRandomPin = () => {
     <button className="flyToRandomPin"
     onClick={flyToRandomPin}    
   >
-    Random Session!
+    🎲 🌍
   </button>
       <MapBackground
         zIndex={0}
