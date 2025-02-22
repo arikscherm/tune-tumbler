@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
+import "./MapBackground.css";
+import "../../index.css"
 
 function InitializeMap({ onMapReady, mapCenter, mapZoom }) {
   const map = useMap();

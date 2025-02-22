@@ -1,0 +1,36 @@
+#homeButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1.25rem; /* 20px */
+    grid-row: 3;
+  }
+
+  button.generate-set {
+    padding: 1.25rem 3.5rem; /* 20px 40px */
+    font-size: 1.5rem;
+  }
+
+  #individualSet {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #setsPlayedDiv {
+    grid-row: 4;
+    position: relative; /* Ensure this content is above map */
+    z-index: 2; /* Content above map */
+  }
+
+  #resetButton {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-left: 80%;
+  }
+
+
+@media (max-width: 600px) {
+  #setsPlayedDiv {
+    text-align: center;
+  }
+}

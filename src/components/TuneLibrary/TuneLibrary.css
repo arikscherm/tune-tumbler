@@ -1,0 +1,101 @@
+#tuneLibContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  #newTuneInputs {
+    margin-left: 5rem; /* 200px */
+  }
+  
+  input {
+    padding: 0.375rem; /* 6px */
+    font-size: 1rem; /* 16px */
+    border-radius: 0.3125rem; /* 5px */
+  }
+  
+  #post {
+    padding: 0.375rem; /* 6px */
+    font-size: 1rem;
+  }
+  
+  #generateInstructions {
+    text-align: center;
+  }
+
+#newTuneInputs {
+    position: relative; /* Ensure the container is positioned above the map */
+    z-index: 2; /* Content above map */
+  }
+  
+  #newTuneInputs input {
+    position: relative; /* Ensure each input field is above map */
+    z-index: 2; /* Content above map */
+  }
+  
+  #newTuneInputs button {
+    position: relative; /* Ensure buttons inside inputs are above map */
+    z-index: 2; /* Content above map */
+  }
+  
+  #sessionAPI {
+    position: relative; /* Ensure this section is positioned above map */
+    z-index: 2; /* Content above map */
+  }
+  
+  #sessionAPI input {
+    position: relative; /* Ensure each input field is above map */
+    z-index: 2; /* Content above map */
+  }
+  
+  #sessionAPI button {
+    position: relative; /* Ensure buttons inside sessionAPI are above map */
+    z-index: 2; /* Content above map */
+  }
+
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 2;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  button:hover {
+    background-color: #54e473;
+  }
+  
+  button.remove {
+    padding: 0.1875rem 0.375rem; /* 3px 6px */
+    margin: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+    font-size: 0.8rem;
+    background-color: white;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  button.remove:hover {
+    background-color: #d80000;
+    color: white;
+  }
+
+  @media (max-width: 600px) {
+
+    #newTuneInputs {
+        margin-left: 3rem; /* 200px*/
+    }
+  }
