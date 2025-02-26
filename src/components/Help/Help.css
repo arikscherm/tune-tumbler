@@ -1,0 +1,37 @@
+.gradient-arrow {
+    display: inline-block;
+  }
+  
+  .gradient-arrow::before {
+    content: "→"; /* Right arrow symbol */
+    font-weight: bold;
+    font-size: 1rem; /* Adjust size for boldness */
+    color: #5f6fd1; /* Gradient color or any solid color */
+    margin-right: 3px;
+  }
+  
+.help-button-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 4;
+}
+
+#help-tooltip {
+    max-width: 300px;
+    text-align: left;
+    opacity: 100;
+}
+
+.help-button {
+    all: unset; /* Resets all default button styles */
+    background: #333;
+    color: white;
+    padding: 6px 9px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+  .help-button:hover {
+    background: #444;
+  }
