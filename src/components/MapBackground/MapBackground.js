@@ -37,7 +37,7 @@ export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true
     <MapContainer
       center={mapCenter}
       zoom={mapZoom}
-      zoomControl={!staticMap}
+      zoomControl={false}
       className="map-background"
       style={{ zIndex }}
       dragging={!staticMap}
