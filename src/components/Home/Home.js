@@ -49,7 +49,7 @@ function Home() {
         <main>
             <section id="homeButtonsContainer">
                 <h4 id="generateInstructions">
-                    <i>Too many tunes, too little time? Let Tune Tumbler choose for you!</i> <br></br>
+                    <i>Too many tunes? Let Tune Tumbler choose for you!</i> <br></br>
                     <i>Click the button below to generate a set of 3 Irish reels!</i></h4>
                 <button className="generate-set" onClick={() => GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, setsPlayed, setSetsPlayed)}>Generate Set!</button>
                 <div>

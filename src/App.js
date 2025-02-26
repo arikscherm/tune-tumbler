@@ -8,6 +8,7 @@ import CurrentSession from './components/RemainingTunes/CurrentSession'
 import SessionMap from './components/SessionSpinner/SessionMap'
 import TuneLibrary from './components/TuneLibrary/TuneLibrary'
 import MapBackground from "./components/MapBackground/MapBackground";
+import Help from "./components/Help/Help";
 import './App.css';
 
 
@@ -22,6 +23,7 @@ function App() {
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <header>
         <MapBackground />
+        <Help />
         <h1>Welcome to Tune Tumbler!</h1>
         <Navbar />
       </header>
