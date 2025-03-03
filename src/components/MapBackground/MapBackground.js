@@ -4,20 +4,23 @@ import { useEffect, useState } from "react";
 import "./MapBackground.css";
 import "../../index.css"
 
-function InitializeMap({ onMapReady, mapCenter, mapZoom }) {
+function InitializeMap({ MapReady, mapCenter, mapZoom }) {
+  // Initialize Leaflet Map instance
   const map = useMap();
-
   useEffect(() => {
-    if (onMapReady) {
-      onMapReady(map);
+    if (MapReady) {
+      // Pass map instance back to session spinner
+      MapReady(map);
     }
-    map.setView(mapCenter, mapZoom); // Ensure center updates dynamically
-  }, [map, onMapReady, mapCenter, mapZoom]);
+    // Dynamically update map center depending on mobile or non mobile view
+    map.setView(mapCenter, mapZoom);
+  }, [map, MapReady, mapCenter, mapZoom]);
 
   return null;
 }
-
-export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true }) {
+// Default as static map, unless called from Session Spinner
+export default function MapBackground({ MapReady, zIndex = 0, staticMap = true }) {
+  // Set the map cetner for mobile and non mobile devices
   const getInitialCenter = () => (window.innerWidth < 600 ? [62, -19] : [59, -27]);
   const getInitialZoom = () => (window.innerWidth < 600 ? 4 : 5);
   const [mapCenter, setMapCenter] = useState(getInitialCenter);
@@ -28,7 +31,7 @@ export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true
       setMapCenter(getInitialCenter());
       setMapZoom(getInitialZoom());
     }
-
+    // Dynamically update map center depending on mobile or non mobile view
     window.addEventListener("resize", updateMapView);
     return () => window.removeEventListener("resize", updateMapView);
   }, []);
@@ -55,7 +58,7 @@ export default function MapBackground({ onMapReady, zIndex = 0, staticMap = true
         maxZoom={8}
         minZoom={1}
       />
-      <InitializeMap onMapReady={onMapReady} mapCenter={mapCenter} mapZoom={mapZoom} />
+      <InitializeMap MapReady={MapReady} mapCenter={mapCenter} mapZoom={mapZoom} />
     </MapContainer>
   );
 }

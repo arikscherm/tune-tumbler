@@ -1,4 +1,4 @@
-.custom-cluster {
+.cluster {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     color: blue;
@@ -20,10 +20,10 @@
   }
   
   .medium {
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
     font-size: 14px;
-    background: #f6ff00;
+    background: #e1e900;
     border-radius: 35%;
     display: flex; 
     text-align: center;
@@ -32,8 +32,8 @@
   }
   
   .large {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     font-size: 16px;
     background: rgba(255, 149, 0, 0.7);
     border-radius: 20%;

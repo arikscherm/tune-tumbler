@@ -5,7 +5,7 @@ import { TuneProvider } from './components/TuneContext/TuneContext';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import CurrentSession from './components/RemainingTunes/CurrentSession'
-import SessionMap from './components/SessionSpinner/SessionMap'
+import SessionMap from './components/SessionSpinner/SessionSpinner'
 import TuneLibrary from './components/TuneLibrary/TuneLibrary'
 import MapBackground from "./components/MapBackground/MapBackground";
 import Help from "./components/Help/Help";
