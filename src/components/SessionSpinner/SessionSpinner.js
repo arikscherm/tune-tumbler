@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import MapBackground from "../MapBackground/MapBackground"
-import '../../index.css';
-import './SessionSpinner.css';
 import L from "leaflet";
 import "leaflet.markercluster";
-import session_data from "../../data/sessions.json";
+import "leaflet.markercluster/dist/MarkerCluster.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import markerRetina from "leaflet/dist/images/marker-icon-2x.png";
-import "leaflet.markercluster/dist/MarkerCluster.css";
-import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+import '../../index.css';
+import './SessionSpinner.css';
+import MapBackground from "../MapBackground/MapBackground";
+import session_data from "../../data/sessions.json";
 
 
 // Marker appearance
@@ -25,10 +24,10 @@ const defaultIcon = L.icon({
 L.Marker.prototype.options.icon = defaultIcon;
 
 function SessionSpinner() {
-  const mapRef = useRef(null); // Reference to Leaflet map
+  const mapRef = useRef(null); // Reference to Leaflet map (MapBackground component)
   const markersLayer = useRef(null); // Sessions Layer
   const markerMap = useRef(new Map()); // Store markers for random selection
-  const [mapReady, setMapReady] = useState(false);
+  const [mapReady, setMapReady] = useState(false); 
 
   useEffect(() => {
 
@@ -39,11 +38,11 @@ function SessionSpinner() {
         // Set up marker clusters
         const markersCluster = L.markerClusterGroup({
           iconCreateFunction: function (cluster) {
+            // Number of pins in cluster
             const count = cluster.getChildCount();
             // assign CSS class
-            let size = "small";
-            if (count > 50) size = "large";
-            else if (count > 20) size = "medium";
+            const size = count > 50 ? "large" : count > 20 ? "medium" : "small";
+            // Each cluster styled by class and shows number of child markers
             return L.divIcon({
               html: `<div class="cluster-icon ${size}">${count}</div>`,
               className: "cluster",
@@ -52,6 +51,7 @@ function SessionSpinner() {
             });
           },
         });
+        // Add cluster to markers Layer
         markersLayer.current = markersCluster.addTo(mapRef.current);
       }
 
@@ -61,7 +61,7 @@ function SessionSpinner() {
        markersLayer.current.clearLayers();
        markerMap.current.clear();
 
-        // Get name, address, town, area and country for each pin's popup
+        // Get session details each markers's popup
         session_data.forEach(({ latitude, longitude, name, address, town, area, country }) => {
           const popupContent = `
             <strong>${name}</strong><br />
@@ -69,14 +69,21 @@ function SessionSpinner() {
             ${town ? town + ", " : ""}${area ? area + "<br />" : ""}
             ${country ? country : ""}
           `;
+
+          // Create marker at coordinates, bind popup with session details, add all markers to markersLayer (already clustered)
           const marker = L.marker([parseFloat(latitude), parseFloat(longitude)])
             .bindPopup(popupContent)
             .addTo(markersLayer.current);
 
-          markerMap.current.set(`${latitude},${longitude}`, marker); // For fly to random pin
+          // Add marker to markerMap, to access random pin by coordinates for flyToRandomMarker
+          markerMap.current.set(`${latitude},${longitude}`, marker);
         });
       }
       loadMarkers();
+      // Clean up function upon unmount to avoid memory leaks if markersLayer.current is not null
+      return () => {
+        markersLayer.current?.clearLayers();
+      };
     }
   // Load the markers only when the map is initialized and ready
   }, [mapReady]);
@@ -101,6 +108,7 @@ const flyToRandomMarker = () => {
         animate: true,
         duration: 1.5,
     });
+    // If marker is in a cluster, spiderfy it (open it up)
     markersLayer.current.zoomToShowLayer(random_marker, () => {
     random_marker.openPopup();
     })
