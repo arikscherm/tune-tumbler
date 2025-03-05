@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import "./MapBackground.css";
 import "../../index.css"
 
+  // Initialize Leaflet useMap instance
 function InitializeMap({ MapReady, mapCenter, mapZoom }) {
-  // Initialize Leaflet Map instance
   const map = useMap();
   useEffect(() => {
+    
+    // Ensure SessionSpinner component only loads markers after map is initalized
     if (MapReady) {
-      // Pass map instance back to session spinner
       MapReady(map);
     }
     // Dynamically update map center depending on mobile or non mobile view
@@ -18,24 +19,26 @@ function InitializeMap({ MapReady, mapCenter, mapZoom }) {
 
   return null;
 }
-// Default as static map, unless called from Session Spinner
+// Default as static map, unless called from Session Spinner where staticMap is passed as false
 export default function MapBackground({ MapReady, zIndex = 0, staticMap = true }) {
-  // Set the map cetner for mobile and non mobile devices
-  const getInitialCenter = () => (window.innerWidth < 600 ? [62, -19] : [59, -27]);
-  const getInitialZoom = () => (window.innerWidth < 600 ? 4 : 5);
-  const [mapCenter, setMapCenter] = useState(getInitialCenter);
-  const [mapZoom, setMapZoom] = useState(getInitialZoom);
+  // Set the map center for mobile and non mobile devices
+  const initialCenter = () => (window.innerWidth < 600 ? [62, -19] : [59, -27]);
+  const initialZoom = () => (window.innerWidth < 600 ? 4 : 5);
+  const [mapCenter, setMapCenter] = useState(initialCenter);
+  const [mapZoom, setMapZoom] = useState(initialZoom);
 
   useEffect(() => {
     function updateMapView() {
-      setMapCenter(getInitialCenter());
-      setMapZoom(getInitialZoom());
+      // update the state for zoom and center
+      setMapCenter(setMapCenter());
+      setMapZoom(setMapZoom());
     }
-    // Dynamically update map center depending on mobile or non mobile view
+    // Listen for dynamic resizing of window
     window.addEventListener("resize", updateMapView);
     return () => window.removeEventListener("resize", updateMapView);
   }, []);
 
+  // use City Lights imagery from NASA for tiles
   return (
     <MapContainer
       center={mapCenter}

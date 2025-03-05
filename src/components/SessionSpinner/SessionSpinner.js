@@ -58,8 +58,8 @@ function SessionSpinner() {
       // Visualize session data
       async function loadMarkers() {
     
-       markersLayer.current.clearLayers();
-       markerMap.current.clear();
+       //markersLayer.current.clearLayers();
+       //markerMap.current.clear();
 
         // Get session details each markers's popup
         session_data.forEach(({ latitude, longitude, name, address, town, area, country }) => {
@@ -80,7 +80,7 @@ function SessionSpinner() {
         });
       }
       loadMarkers();
-      // Clean up function upon unmount to avoid memory leaks if markersLayer.current is not null
+      // // Clean up function upon unmount to avoid memory leaks if markersLayer.current is not null
       return () => {
         markersLayer.current?.clearLayers();
       };
@@ -125,6 +125,7 @@ const flyToRandomMarker = () => {
   </button>
       <MapBackground
         zIndex={0}
+        // Render mapBackground component but make it interactive
         staticMap={false}
           // When MapBackground initializes the non static map, the map instance is passed up here.
           MapReady={(map) => { 
