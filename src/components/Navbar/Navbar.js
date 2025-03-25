@@ -14,14 +14,11 @@ function Navbar() {
           <NavLink to="/tune-library" activeclassname="active">Tune Library</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/current-session" activeclassname="active">Remaining Tunes</NavLink>
+          <NavLink to="/remaining-tunes" activeclassname="active">Remaining Tunes</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/session-map" activeclassname="active">Session Spinner</NavLink>
+          <NavLink to="/session-spinner" activeclassname="active">Session Spinner</NavLink>
         </li>
-        {/* <li className="nav-link">
-          <NavLink to="/favorites" activeClassName="active">Favorites</NavLink>
-        </li> */}
       </ul>
     </nav>
   );

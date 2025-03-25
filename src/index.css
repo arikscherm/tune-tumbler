@@ -77,7 +77,7 @@ button {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 12px; /* Base font size for scaling */
+    font-size: 12px;
     box-sizing: border-box;
   }
 

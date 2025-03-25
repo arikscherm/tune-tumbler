@@ -11,12 +11,12 @@ function GetRandomSet(newSet, setNewSet, remainingTunes, setRemainingTunes, sets
     else {
         for (let i = 0; i < 3; i++) {
 
-            //Select random tune and delete it from remainingTunes
+            // Select random tune and delete it from remainingTunes
             let randomIndex = Math.floor(Math.random() * remainingTunes.length);
             let newTune = remainingTunes[randomIndex];
             remainingTunes.splice(randomIndex, 1);
 
-            //Concatenate new tune to the set. Sets are displayed as a string--> tune1/ tune2/ tune3
+            // Concatenate new tune to the set. Sets are displayed as a string--> tune1/ tune2/ tune3
             if (i < 2) {
                 generatedSet = generatedSet.concat(newTune.concat('/ '));
             }

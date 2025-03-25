@@ -5,7 +5,7 @@ import { TuneProvider } from './components/TuneContext/TuneContext';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import CurrentSession from './components/RemainingTunes/CurrentSession'
-import SessionMap from './components/SessionSpinner/SessionMap'
+import SessionMap from './components/SessionSpinner/SessionSpinner'
 import TuneLibrary from './components/TuneLibrary/TuneLibrary'
 import MapBackground from "./components/MapBackground/MapBackground";
 import Help from "./components/Help/Help";
@@ -32,9 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tune-library" element={<TuneLibrary />} />
-          <Route path="/current-session" element={<CurrentSession />} />
-          {/* <Route path="/favorites" element={<Favorites />} /> */}
-          <Route path="/session-map" element={<SessionMap />} />
+          <Route path="/remaining-tunes" element={<CurrentSession />} />
+          <Route path="/session-spinner" element={<SessionMap />} />
         </Routes>
       </TuneProvider>
     </Router>
