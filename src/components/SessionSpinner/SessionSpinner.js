@@ -31,7 +31,7 @@ function SessionSpinner() {
 
   useEffect(() => {
 
-    // Make sure map instance has been passed up from MapBackground component
+    // Make sure map instance has been passed up from the MapBackground component before continuing
     if (mapRef.current) {
       // Ensure there is only one cluster per layer of data
       if (!markersLayer.current) {
@@ -80,7 +80,7 @@ function SessionSpinner() {
         });
       }
       loadMarkers();
-      // // Clean up function upon unmount to avoid memory leaks if markersLayer.current is not null
+      // Clean up function upon unmount to avoid memory leaks if markersLayer.current is not null
       return () => {
         markersLayer.current?.clearLayers();
       };
@@ -92,7 +92,7 @@ function SessionSpinner() {
 const flyToRandomMarker = () => {
   if (!mapRef.current || session_data.length === 0) return;
 
-  // Get random index of points and extracts its coordinates
+  // Get random index of session_data and extracts its coordinates
   const randomIndex = Math.floor(Math.random() * session_data.length);
   const { latitude, longitude } = session_data[randomIndex];
 
@@ -102,7 +102,7 @@ const flyToRandomMarker = () => {
   // Fly to randomly chosen marker
   if (random_marker) {
     const map = mapRef.current;
-    const maxZoom = 8; // Prevent zooming too far
+    const maxZoom = 8;
 
     map.flyTo([parseFloat(latitude), parseFloat(longitude)], maxZoom, {
         animate: true,

@@ -32,9 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tune-library" element={<TuneLibrary />} />
-          <Route path="/current-session" element={<CurrentSession />} />
-          {/* <Route path="/favorites" element={<Favorites />} /> */}
-          <Route path="/session-map" element={<SessionMap />} />
+          <Route path="/remaining-tunes" element={<CurrentSession />} />
+          <Route path="/session-spinner" element={<SessionMap />} />
         </Routes>
       </TuneProvider>
     </Router>
