@@ -17,7 +17,7 @@ function Navbar() {
           <NavLink to="/remaining-tunes" activeclassname="active">Remaining Tunes</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/session-spinner" activeclassname="active">Session Spinner</NavLink>
+          <NavLink to="/session-spinner" activeclassname="active">Session Map</NavLink>
         </li>
       </ul>
     </nav>
