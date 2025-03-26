@@ -30,8 +30,8 @@ export default function MapBackground({ MapReady, zIndex = 0, staticMap = true }
   useEffect(() => {
     function updateMapView() {
       // update the state for zoom and center
-      setMapCenter(setMapCenter());
-      setMapZoom(setMapZoom());
+      setMapCenter(initialCenter);
+      setMapZoom(initialZoom);
     }
     // Listen for dynamic resizing of window
     window.addEventListener("resize", updateMapView);
